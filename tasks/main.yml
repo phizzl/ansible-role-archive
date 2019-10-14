@@ -1,0 +1,6 @@
+---
+- name: Create archive
+  include_tasks: run-archive.yml
+  loop: "{{ archive_directories }}"
+  loop_control:
+    loop_var: archive

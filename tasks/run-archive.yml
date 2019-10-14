@@ -1,0 +1,19 @@
+---
+- name: Set empty exclusion list
+  set_fact:
+    archive_exclusion: []
+
+- name: Build artifact exclusion list
+  set_fact:
+    archive_exclusion: "{{ archive_exclusion }} + [ '{{ archive.path }}/{{ item }}' ]"
+  with_items: "{{ archive.excludes }}"
+
+- name: Create artifact file
+  archive:
+    format: "{{ archive.format | default('gz') }}"
+    remove: "{{ archive.remove | default('no') }}"
+    path:
+      - "{{ archive.path }}/*"
+      - "{{ archive.path }}/.*"
+    dest: "{{ archive.dest }}"
+    exclude_path: "{{ archive_exclusion }}"
