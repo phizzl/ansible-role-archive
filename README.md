@@ -20,8 +20,8 @@ This list contains the definitions for all archives to build
 | `path` | The | yes | / |
 | `dest` | The target filepath that the archive should be saved to | yes | / |
 | `format` | The generating format | no | gz |
-| `remove` | Flag to remove the source files after the artifact has been generated. | no | [] |
-| `excludes` | List of files and directories to exclude from artifact | no |  [] |
+| `remove` | Flag to remove the source files after the archive has been generated. | no | [] |
+| `excludes` | List of files and directories to exclude from archive | no |  [] |
 
 
 ## Dependencies
