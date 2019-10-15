@@ -3,5 +3,6 @@ galaxy_info:
   role_name: archive
   author: phizzl
   description: Role to generate archives
+  license: "MIT"
 
 dependencies: []
